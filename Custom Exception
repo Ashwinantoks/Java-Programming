@@ -25,9 +25,7 @@ System.out.println("Enter your Age ");
 int age=sc.nextInt();
 try
 {
-
 validateAge(age);
-
 }
 catch(AgeExp e)
 {
