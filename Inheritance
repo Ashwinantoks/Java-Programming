@@ -13,7 +13,6 @@ import java.util.Scanner;
 			System.out.println("Salary : "  + Salary);
 		}
 	}
-
 	class Officer extends Employee
 	{
 String Specialization;
