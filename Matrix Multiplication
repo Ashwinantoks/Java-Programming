@@ -62,6 +62,7 @@ public class MatrixMultiplication {
             for(j=0;j<c2;j++){
                 System.out.print(c[i][j]+"\t");
             }
+
             System.out.println();
         }
     } 
