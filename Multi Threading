@@ -1,0 +1,58 @@
+import java.util.*;
+class RandomThread extends Thread 
+{
+    public int limit,n;
+	public void run() 
+	{		
+        Random r = new Random();
+		for (int i = 0; i < limit; i++) 
+		{
+           n = r.nextInt(100);
+            if (n % 2 == 0) 
+            {
+            	EvenThread  thread = new EvenThread(n);
+            	thread.start();
+            } 
+            else 
+            {
+            	 OddThread  thread1 = new OddThread(n);
+            	 thread1.start();
+            }          
+        }       
+    }
+}
+class EvenThread extends Thread 
+{
+    private int n;
+    public EvenThread(int n) 
+    {
+        this.n = n;
+    }
+    public void run() 
+    {
+        System.out.println("Square of " + n + " = " + n * n);
+    }
+}
+class OddThread extends Thread 
+{
+    private int n;
+    public OddThread(int n) 
+    {
+        this.n = n;
+    }
+    public void run() 
+    {
+        System.out.println("Cube of " + n + " = " + n * n * n);
+    }
+}
+public class multithread 
+{
+    public static void main(String[] args) 
+    {
+    	System.out.println("Limit");
+    	Scanner sc=new Scanner(System.in);
+        RandomThread r1 = new RandomThread();
+        r1.limit=sc.nextInt();
+        r1.start(); 
+    }
+}
