@@ -1,0 +1,55 @@
+import java.util.Scanner;
+	class Employee1
+	{
+		 float salary;
+		 float DA;
+		 float HRA;
+		 float gross_Salary;
+		 void display()
+		 {
+		  System.out.println("EMPLOYEE");
+		 }
+		 void calcSalary()
+		 {
+		  gross_Salary=salary+(DA/100)*salary+(HRA/100)*salary;
+		  System.out.println("Salary of employee is "+gross_Salary);
+		 }
+		}
+		class Engineer extends Employee1  
+		{
+		 Engineer(float salary,float DA,float HRA)
+		 {
+		  this.salary=salary;
+		  this.DA=DA;
+		  this.HRA=HRA;
+		 }
+		void display()
+		{
+			  super.display();
+			  super.calcSalary();
+			  System.out.println("ENGINEER");
+			 }
+			 void calcSalary()
+			 {
+			  System.out.println("Salary of engineer is "+ (gross_Salary*2));
+			 }
+			}
+		public class Super
+		{
+			public static void main(String[]args)
+			{
+				float salary,DA,HRA;
+				  Scanner sc=new Scanner(System.in);
+				  System.out.println("Enter the salary of Employee:");
+				  salary=sc.nextFloat();
+				  System.out.println("Enter the DA of Employee:");
+				  DA=sc.nextFloat();
+				  System.out.println("Enter the HRA of Employee:");
+				  HRA=sc.nextFloat();
+				  Engineer eng=new Engineer(salary,DA,HRA);
+				  eng.display();
+				  eng.calcSalary();
+				  
+				  
+			}
+		}
