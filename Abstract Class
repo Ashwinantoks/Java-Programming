@@ -1,0 +1,70 @@
+import java.util.Scanner;
+abstract class Shape
+{     
+	
+	 abstract void numberofSides();
+	 abstract void sumofAngles();
+	}
+	class Rectangle extends Shape
+	{
+	 int side;
+	 Rectangle(int side)
+	 {
+	  this.side=side;
+	 }
+	 void numberofSides()
+	     {
+		  System.out.println("Number of sides of Rectangle:"+side);
+		 }
+		 void sumofAngles()
+		 {
+		  System.out.println("Sum of angles of Rectangle:"+((side-2)*180));
+		 }
+	}
+		class Triangle extends Shape
+		{
+		 int side;
+		 Triangle(int side)
+		 {
+		  this.side=side;
+		 }
+		 void numberofSides()
+		 {
+		  System.out.println("Number of sides of Triangle:"+side);
+		 }
+		 void sumofAngles()
+		 {
+		  System.out.println("Sum of angles of Triangle:"+((side-2)*180));
+		 }
+		}
+		class Hexagon extends Shape
+		{
+			int side;
+			Hexagon(int side)
+			 {
+			  this.side=side;
+			 }
+			 void numberofSides()
+			 {
+			  System.out.println("Number of sides of Hexagon:"+side);
+			 }
+			 void sumofAngles()
+			 {
+			  System.out.println("Sum of angles of Hexagon:"+((side-2)*180));
+			 }
+			}
+		public class abstractclass
+		{
+			 public static void main(String[]args)
+			 {
+			  Rectangle rec=new Rectangle(4);
+			  Triangle tri=new Triangle(3);
+			  Hexagon hex=new Hexagon(6);
+			  rec.numberofSides();
+			  rec.sumofAngles();
+			  tri.numberofSides();
+			  tri.sumofAngles();
+			  hex.numberofSides();
+			  hex.sumofAngles();
+			 }
+			}
