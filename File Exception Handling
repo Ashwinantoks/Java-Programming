@@ -1,0 +1,64 @@
+import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
+public class Files extends IOException
+{
+	public static void main (String[] args)
+	{
+		try
+		{
+			File f1 = new File ("Sample.txt");
+			if (f1.exists())
+			{
+				System.out.println("File already exist");
+			}
+			else
+			{
+				f1.createNewFile();
+				System.out.println("New file is created");
+			}
+			
+			Scanner sc = new Scanner (System.in);
+			System.out.println("Enter the contents");
+			String str = sc.next();
+			FileWriter f2 = new FileWriter ("Sample.txt");
+			f2.write(str);
+			System.out.println("File is being written\n");
+			f2.close();
+			
+			File f3 = new File ("NewSample.txt");
+			if (f3.exists())
+			{
+				System.out.println("File already exists");
+			}
+			else
+			{
+				f3.createNewFile();
+				System.out.println("New file is created");
+			}
+			
+			FileReader fr = new FileReader ("Sample.txt");
+			int fileLength = (int) f1.length();
+			char[] content = new char[fileLength];
+			fr.read(content);
+			
+			FileWriter fw = new FileWriter ("NewSample.txt");
+			fw.write(content);
+			fw.close();
+			
+			System.out.println("Content is written");
+			FileReader fn = new FileReader ("NewSample.txt");
+			BufferedReader Br = new BufferedReader (fn);
+			String C;
+			
+			while ( (C = Br.readLine())!=null)
+			{
+				System.out.println(C);
+			}
+		}
+		catch (IOException e)
+		{
+			System.out.println(e);
+		}
+	}
+}
