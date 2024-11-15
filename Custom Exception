@@ -1,0 +1,42 @@
+import java.lang.Exception;
+import java.util.Scanner;
+class AgeExp extends Exception
+{
+public AgeExp(String message)
+{
+super(message);
+}
+}
+public class custom
+{
+public static void validateAge(int age)throws AgeExp
+{
+if(age<18)
+{
+throw new AgeExp("Age must be 18");
+}
+System.out.println("Age is valid : "+age);
+}
+public static void main(String[]args)
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("Eligiblity test for vote");
+System.out.println("Enter your Age ");
+int age=sc.nextInt();
+try
+{
+
+validateAge(age);
+
+}
+catch(AgeExp e)
+{
+System.out.println("Error:"+e.getMessage());
+}
+finally
+{
+System.out.println("Your response has been recorded !");
+sc.close();
+}
+}
+}
