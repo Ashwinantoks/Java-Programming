@@ -1,0 +1,107 @@
+interface pets
+{
+public String getName();
+public void setName(String Name);
+public void play();
+}
+abstract class Animal
+{
+protected int legs;
+protected Animal(int legs)
+{
+this.legs=legs;
+}
+public void walk()
+{
+System.out.println("This animal has "+legs+" legs");
+}
+public abstract void eat();
+}
+class Spider extends Animal
+{
+public Spider()
+{
+super(8);
+}
+public void eat()
+{
+System.out.println("Spider eats small inscets");
+}
+}
+class Cat extends Animal implements pets
+{
+String Name;
+public Cat(String Name)
+{ super(4);
+this.Name=Name;
+System.out.println("Name of cat is "+Name);
+}
+public String getName()
+{
+return Name;
+}
+public void setName(String Name)
+{
+this.Name=Name;
+}
+public void play()
+{
+System.out.println("Cat is playing");
+}
+public void eat()
+{
+System.out.println("Cat eats fish");
+}
+}
+class Fish extends Animal implements pets
+
+{
+String Name;
+public Fish()
+{
+super(0);
+}
+public String getName()
+{
+return Name;
+}
+public void setName(String Name)
+{
+this.Name=Name;
+}
+public void play()
+{
+System.out.println("Fish is playing");
+}
+public void eat()
+{
+System.out.println("Fish eats fish foods");
+}
+public void walk()
+{
+System.out.println("Fish doesnot walk ; They swim");
+}
+}
+public class Animalinter
+{
+public static void main(String args[])
+{
+System.out.println("Spider");
+Spider s=new Spider();
+s.walk();
+s.eat();
+System.out.println("Cat");
+Cat c=new Cat("Kitty");
+c.walk();
+c.eat();
+c.setName("Sunny");
+System.out.println("Name of cat is "+c.getName());
+System.out.println("Fish");
+Fish f=new Fish();
+f.walk();
+f.eat();
+f.play();
+f.setName("Fighter");
+System.out.println("Name of fish is "+f.getName());
+}
+}
