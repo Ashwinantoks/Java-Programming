@@ -1,0 +1,19 @@
+import java.util.*;
+public class Tokenizer {
+public static void main (String args[])
+{
+Scanner sc = new Scanner(System.in);
+int sum= 0;
+System.out.println("Enter the Numbers to be coverted from String to Integer");
+
+String number = sc.nextLine();
+StringTokenizer ST = new StringTokenizer(number," ");
+while(ST.hasMoreTokens())
+{
+String token = ST.nextToken();
+int newtoken = Integer.parseInt(token);
+sum = sum + newtoken;
+}
+System.out.println("The converted integers sum : "+sum);
+}
+}
