@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.Scanner;
+public class fileReaderWriter 
+{
+	public static void main(String args[]) 
+	{
+		try
+		{
+			File f1 = new File("Sample.txt");
+			if(f1.exists())
+			{
+				System.out.println("The file  already exist");
+			}
+			if(f1.createNewFile())
+			{
+				System.out.println("The file is created");
+			}
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the file Contents");
+			String str = sc.nextLine();
+			int size = str.length();
+			FileWriter f2 = new FileWriter("Sample.txt");
+			f2.write(str);
+			System.out.println("The content writed\n\n");
+			f2.close();
+			
+			File f3 = new File("NewSample.txt");
+			if(f3.exists())
+			{
+				System.out.println("The file  already exist");
+			}
+			if(f3.createNewFile())
+			{
+				System.out.println("The new file is created");
+			}
+			FileReader reader1 = new FileReader("Sample.txt");
+			char [] Content = new char[size];
+			reader1.read(Content);
+			
+			FileWriter writer = new FileWriter("NewSample.txt");
+			writer.write(Content);
+			writer.close();
+			System.out.println("The content of Sample.txt  written to  NewSample.txt");
+			FileReader reader2 = new FileReader("NewSample.txt");
+			BufferedReader BR = new BufferedReader(reader2);
+			String C;
+			while ((C = BR.readLine())!=null)
+			{
+				System.out.println(C);
+			}
+		}
+		catch (IOException e)
+		{
+			System.out.println(e);
+		}
+	}
+			
+}
