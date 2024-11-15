@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Exception {
+public static void main(String []args) {
+Scanner sc=new Scanner(System.in);
+char c;
+do {
+System.out.println("1.Arithmetic Exception\n2.ArrayIndexOutOfBound Exception\n Enter your choice:");
+int choice=sc.nextInt();
+switch(choice) {
+case 1:
+
+try {
+System.out.println("Enter num1:");
+int num1=sc.nextInt();
+System.out.println(";Enter num2:");
+int num2=sc.nextInt();
+int result=(num1/num2);
+System.out.println("Answer ="+result);
+}
+catch(ArithmeticException e){
+System.out.println(e);
+}
+finally {
+System.out.println("Code is Free of Error!");
+}
+break;
+case 2:
+try {
+System.out.println("Enter the size of array:";);
+int size=sc.nextInt();
+int a[]=new int[size];
+System.out.println("Enter array elements:");
+for(int i=0;i&lt;size;i++) {
+a[i]=sc.nextInt();
+}
+System.out.println("Enter the position:";
+int val=sc.nextInt();
+System.out.println("Value =";+a[val-1]);
+}
+catch(ArrayIndexOutOfBoundsException h)
+{
+System.out.println(h);
+}
+break;
+}
+System.out.println(&quot;Dou you want to continue?(y/n)&quot;);
+c=sc.next().charAt(0);
+}while(c==&#39;y&#39;||c==&#39;Y&#39;);
+}
+}
