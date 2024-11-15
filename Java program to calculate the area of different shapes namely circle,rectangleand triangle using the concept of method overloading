@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Area
+{
+double CalcArea(float radius)
+{
+return 3.14*radius*radius;
+}
+double CalcArea(float length ,float breadth)
+{
+return length*breadth;
+}
+double CalcArea(double base, double height)
+{
+return 0.5*base*height;
+}
+}
+public class overload
+{
+public static void main(String[]args)
+{
+Scanner sc=new Scanner(System.in);
+Area ar=new Area();
+System.out.println("Enter the radius of the circle ");
+float radius=sc.nextFloat();
+System.out.println("The area of the Circle is "+ar.CalcArea(radius));
+System.out.println("Enter the length and width of the rectangle ");
+float length=sc.nextFloat();
+float breadth=sc.nextFloat();
+System.out.println("The area of the rectangle is : "+ar.CalcArea(length,breadth));
+System.out.println("Enter the base and height of the triangle");
+double base=sc.nextDouble();
+double height=sc.nextDouble();
+System.out.println("The area of the triangle is: "+ar.CalcArea(base,height));
+}
+}
